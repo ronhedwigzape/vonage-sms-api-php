@@ -12,7 +12,7 @@ $client = new \Vonage\Client($basic);
 
 try {
     $response = $client->sms()->send(
-        new \Vonage\SMS\Message\SMS($to, 'HEDWIG', $message)
+        new \Vonage\SMS\Message\SMS($to, 'VONAGE', $message)
     );
 
     $messages = $response->current();

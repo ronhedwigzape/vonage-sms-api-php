@@ -214,7 +214,6 @@
 </head>
 <body class="bg-dark">
 <div class="container">
-
     <div class="form text-center rounded-5 shadow-lg p-5">
         <h2 class="text-white fw-bold">Vonage SMS API</h2>
             <label for="phone" class="form-label text-white mt-3 mb-2"><i class="bi bi-telephone me-2"></i>Phone Number</label>
@@ -227,20 +226,19 @@
                 style="width: 40rem; height: 10rem; resize: none;"
             >A text message sent using the Nexmo SMS API.
         </textarea>
-            <div class="d-flex justify-content-center mt-3 ">
-                <button class="btn-space">
-                    <strong>SEND</strong>
-                    <div id="container-stars">
-                        <div id="stars"></div>
-                    </div>
-                    <div id="glow">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                    </div>
-                </button>
-            </div>
+        <div class="d-flex justify-content-center mt-3 ">
+            <button class="btn-space">
+                <strong>SEND</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </div>
     </div>
-
 </div>
 <script>
     $(function() {
@@ -261,13 +259,8 @@
                     message: msg
                 },
                 success: function(response) {
-                    let data = JSON.parse(response);
-                    console.log(data);
-                    console.log(response);
-
-                    alert(response.status === 0
-                        ? 'The message was sent successfully'
-                        : 'The message failed with status: ' + response.status);
+                    console.log(response)
+                    alert('The message was sent successfully!');
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error(textStatus, errorThrown);
